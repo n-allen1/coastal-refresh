@@ -1,46 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio | Going Coastal Refresh Co.</title>
-<meta name="description" content="See before-and-after photos of the beach homes and condos Going Coastal Refresh Co. has updated across Gulf Shores, Orange Beach and Fort Morgan, Alabama.">
-<link rel="icon" href="images/branding/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Going Coastal Refresh Co.</title>
+    <meta
+      name="description"
+      content="See before-and-after photos of the beach homes and condos Going Coastal Refresh Co. has updated across Gulf Shores, Orange Beach and Fort Morgan, Alabama."
+    />
+    <link rel="icon" href="images/branding/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="site-logo">
+          <img src="images/branding/logo.png" alt="Going Coastal Refresh Co. logo" />
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<header class="site-header">
-  <div class="container">
-    <a href="index.html" class="site-logo">
-      <img src="images/branding/logo.png" alt="Going Coastal Refresh Co. logo">
-    </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <section class="hero">
+      <div class="container">
+        <h1>Our Portfolio</h1>
+        <p class="hero-lede">
+          A look at real refresh projects across Gulf Shores, Orange Beach and Fort Morgan &mdash;
+          from single-room updates to full property makeovers.
+        </p>
+      </div>
+    </section>
 
-<section class="hero">
-  <div class="container">
-    <h1>Our Portfolio</h1>
-    <p class="hero-lede">
-      A look at real refresh projects across Gulf Shores, Orange Beach and
-      Fort Morgan &mdash; from single-room updates to full property makeovers.
-    </p>
-  </div>
-</section>
-
-<!--
+    <!--
 FEATURED PROJECTS
 
 This section combines the client's original "Portfolio" and "Portfolio
@@ -64,73 +69,113 @@ to fit this card size without cutting off the "before"/"after" labels -
 they aren't used anywhere else on the site, so they're safe to replace
 or re-crop without affecting other pages.
 -->
-<section id="featured-projects">
-  <div class="container">
-    <div class="section-intro">
-      <p class="eyebrow">Featured Projects</p>
-      <h2>Recent Transformations</h2>
-    </div>
-    <div class="portfolio-grid">
+    <section id="featured-projects">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Featured Projects</p>
+          <h2>Recent Transformations</h2>
+        </div>
+        <div class="portfolio-grid">
+          <!-- Image file: images/portfolio/collection-coastal-condo-refresh.jpg -->
+          <div class="portfolio-card">
+            <img
+              src="images/portfolio/collection-coastal-condo-refresh.jpg"
+              alt="Coastal Condo Refresh project"
+            />
+            <div class="portfolio-card-body">
+              <h3>Coastal Condo Refresh</h3>
+              <p class="text-muted">
+                Complete makeover of a beach condo, transforming outdated decor and fixtures into a
+                modern, rental-ready space. Features include updated bathrooms, a refreshed kitchen,
+                and new coastal-themed furnishings to maximize rental appeal and guest satisfaction.
+              </p>
+            </div>
+          </div>
 
-      <!-- Image file: images/portfolio/collection-coastal-condo-refresh.jpg -->
-      <div class="portfolio-card">
-        <img src="images/portfolio/collection-coastal-condo-refresh.jpg" alt="Coastal Condo Refresh project">
-        <div class="portfolio-card-body">
-          <h3>Coastal Condo Refresh</h3>
-          <p class="text-muted">Complete makeover of a beach condo, transforming outdated decor and fixtures into a modern, rental-ready space. Features include updated bathrooms, a refreshed kitchen, and new coastal-themed furnishings to maximize rental appeal and guest satisfaction.</p>
+          <!-- Image file: images/portfolio/collection-bathroom-renovation.jpg -->
+          <div class="portfolio-card">
+            <img
+              src="images/portfolio/collection-bathroom-renovation.jpg"
+              alt="Bathroom Renovation project"
+            />
+            <div class="portfolio-card-body">
+              <h3>Bathroom Renovation</h3>
+              <p class="text-muted">
+                Modernization of a dated beach condo bathroom. The renovation includes new tile
+                work, updated vanity and fixtures, improved lighting, and a more functional layout
+                to create a spa-like experience for renters.
+              </p>
+            </div>
+          </div>
+
+          <!-- Image file: images/portfolio/collection-bedroom-suite-sanctuary.jpg -->
+          <div class="portfolio-card">
+            <img
+              src="images/portfolio/collection-bedroom-suite-sanctuary.jpg"
+              alt="Bedroom Suite Sanctuary project"
+            />
+            <div class="portfolio-card-body">
+              <h3>Bedroom Suite Sanctuary</h3>
+              <p class="text-muted">
+                A serene bedroom update prioritizing comfort and style for a beach home. This
+                project involved a complete refresh with a new color palette, plush bedding,
+                enhanced lighting, and a custom-designed storage bed for optimal space utilization.
+              </p>
+            </div>
+          </div>
+
+          <!-- Image file: images/portfolio/collection-rental-property-prep.jpg -->
+          <div class="portfolio-card">
+            <img
+              src="images/portfolio/collection-rental-property-prep.jpg"
+              alt="Rental Property Prep project"
+            />
+            <div class="portfolio-card-body">
+              <h3>Rental Property Prep</h3>
+              <p class="text-muted">
+                Strategic improvements for a property preparing to enter the rental market. Focus on
+                high-impact, affordable updates like fresh paint, new window treatments, and
+                durable, attractive decor to immediately enhance curb appeal and rental readiness.
+              </p>
+            </div>
+          </div>
+
+          <!-- Image file: images/portfolio/collection-realtor-listing-refresh.jpg -->
+          <div class="portfolio-card">
+            <img
+              src="images/portfolio/collection-realtor-listing-refresh.jpg"
+              alt="Realtor Listing Refresh project"
+            />
+            <div class="portfolio-card-body">
+              <h3>Realtor Listing Refresh</h3>
+              <p class="text-muted">
+                A quick and efficient property refresh for a Realtor's listing. This project
+                involved light cosmetic updates, decluttering, and strategic staging to make the
+                property more appealing to potential buyers and reduce time on the market.
+              </p>
+            </div>
+          </div>
+
+          <!-- Image file: images/portfolio/collection-vacation-rental-boost.jpg -->
+          <div class="portfolio-card">
+            <img
+              src="images/portfolio/collection-vacation-rental-boost.jpg"
+              alt="Vacation Rental Boost project"
+            />
+            <div class="portfolio-card-body">
+              <h3>Vacation Rental Boost</h3>
+              <p class="text-muted">
+                Enhancement project for a vacation rental property focused on increasing booking
+                potential. Key updates include painting, new lighting, durable flooring, and custom
+                storage solutions designed for frequent guest turnover.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Image file: images/portfolio/collection-bathroom-renovation.jpg -->
-      <div class="portfolio-card">
-        <img src="images/portfolio/collection-bathroom-renovation.jpg" alt="Bathroom Renovation project">
-        <div class="portfolio-card-body">
-          <h3>Bathroom Renovation</h3>
-          <p class="text-muted">Modernization of a dated beach condo bathroom. The renovation includes new tile work, updated vanity and fixtures, improved lighting, and a more functional layout to create a spa-like experience for renters.</p>
-        </div>
-      </div>
-
-      <!-- Image file: images/portfolio/collection-bedroom-suite-sanctuary.jpg -->
-      <div class="portfolio-card">
-        <img src="images/portfolio/collection-bedroom-suite-sanctuary.jpg" alt="Bedroom Suite Sanctuary project">
-        <div class="portfolio-card-body">
-          <h3>Bedroom Suite Sanctuary</h3>
-          <p class="text-muted">A serene bedroom update prioritizing comfort and style for a beach home. This project involved a complete refresh with a new color palette, plush bedding, enhanced lighting, and a custom-designed storage bed for optimal space utilization.</p>
-        </div>
-      </div>
-
-      <!-- Image file: images/portfolio/collection-rental-property-prep.jpg -->
-      <div class="portfolio-card">
-        <img src="images/portfolio/collection-rental-property-prep.jpg" alt="Rental Property Prep project">
-        <div class="portfolio-card-body">
-          <h3>Rental Property Prep</h3>
-          <p class="text-muted">Strategic improvements for a property preparing to enter the rental market. Focus on high-impact, affordable updates like fresh paint, new window treatments, and durable, attractive decor to immediately enhance curb appeal and rental readiness.</p>
-        </div>
-      </div>
-
-      <!-- Image file: images/portfolio/collection-realtor-listing-refresh.jpg -->
-      <div class="portfolio-card">
-        <img src="images/portfolio/collection-realtor-listing-refresh.jpg" alt="Realtor Listing Refresh project">
-        <div class="portfolio-card-body">
-          <h3>Realtor Listing Refresh</h3>
-          <p class="text-muted">A quick and efficient property refresh for a Realtor's listing. This project involved light cosmetic updates, decluttering, and strategic staging to make the property more appealing to potential buyers and reduce time on the market.</p>
-        </div>
-      </div>
-
-      <!-- Image file: images/portfolio/collection-vacation-rental-boost.jpg -->
-      <div class="portfolio-card">
-        <img src="images/portfolio/collection-vacation-rental-boost.jpg" alt="Vacation Rental Boost project">
-        <div class="portfolio-card-body">
-          <h3>Vacation Rental Boost</h3>
-          <p class="text-muted">Enhancement project for a vacation rental property focused on increasing booking potential. Key updates include painting, new lighting, durable flooring, and custom storage solutions designed for frequent guest turnover.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!--
+    <!--
 BEFORE & AFTER HIGHLIGHTS
 
 These are the client's own designed before/after graphics. They already
@@ -145,84 +190,121 @@ block. The first image(s) inside are the before/after photo(s); anything
 inside "ba-extra" is a supporting "how we updated it" checklist card for
 that same project.
 -->
-<section class="section-alt" id="before-after">
-  <div class="container">
-    <div class="section-intro">
-      <p class="eyebrow">Before &amp; After</p>
-      <h2>Small Changes, Big Impact</h2>
-    </div>
-    <div class="ba-groups">
-
-      <!-- Sleigh bed bedroom -->
-      <div class="ba-group">
-        <!-- Image file: images/portfolio/bedroom-refresh-before-after.png -->
-        <img src="images/portfolio/bedroom-refresh-before-after.png" alt="Sleigh bed bedroom refresh, before and after">
-        <div class="ba-extra">
-          <!-- Image file: images/portfolio/sleigh-bed-bedroom-how-we-updated.jpg -->
-          <img src="images/portfolio/sleigh-bed-bedroom-how-we-updated.jpg" alt="How we updated the sleigh bed bedroom on a budget">
+    <section class="section-alt" id="before-after">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Before &amp; After</p>
+          <h2>Small Changes, Big Impact</h2>
         </div>
-      </div>
+        <div class="ba-groups">
+          <!-- Sleigh bed bedroom -->
+          <div class="ba-group">
+            <!-- Image file: images/portfolio/bedroom-refresh-before-after.png -->
+            <img
+              src="images/portfolio/bedroom-refresh-before-after.png"
+              alt="Sleigh bed bedroom refresh, before and after"
+            />
+            <div class="ba-extra">
+              <!-- Image file: images/portfolio/sleigh-bed-bedroom-how-we-updated.jpg -->
+              <img
+                src="images/portfolio/sleigh-bed-bedroom-how-we-updated.jpg"
+                alt="How we updated the sleigh bed bedroom on a budget"
+              />
+            </div>
+          </div>
 
-      <!-- Custom storage beds: grouped with the bedroom project above
+          <!-- Custom storage beds: grouped with the bedroom project above
            (storage beds are a bedroom feature) per the client's category
            order - bedroom items together, then bathroom items together,
            then everything else. The client's original site also showed
            this "extra storage" info graphic right before the storage
            beds before/after example, so that pairing is kept too. -->
-      <div class="ba-group">
-        <!-- Image file: images/portfolio/custom-storage-beds-info.png -->
-        <img src="images/portfolio/custom-storage-beds-info.png" alt="Are you in need of extra storage for your beach property? Lift-up storage beds can provide a surprising amount of hidden space, customizable for king, queen and twin beds including bunk rooms, with an option to lock for owner-only storage.">
-        <!-- Image file: images/portfolio/storage-beds-before-after.jpg -->
-        <img src="images/portfolio/storage-beds-before-after.jpg" alt="Custom storage beds, before and after, king queen and twin bunks">
-      </div>
+          <div class="ba-group">
+            <!-- Image file: images/portfolio/custom-storage-beds-info.png -->
+            <img
+              src="images/portfolio/custom-storage-beds-info.png"
+              alt="Are you in need of extra storage for your beach property? Lift-up storage beds can provide a surprising amount of hidden space, customizable for king, queen and twin beds including bunk rooms, with an option to lock for owner-only storage."
+            />
+            <!-- Image file: images/portfolio/storage-beds-before-after.jpg -->
+            <img
+              src="images/portfolio/storage-beds-before-after.jpg"
+              alt="Custom storage beds, before and after, king queen and twin bunks"
+            />
+          </div>
 
-      <!-- Bathroom refreshes (primary + guest) -->
-      <div class="ba-group">
-        <!-- Image file: images/portfolio/bathroom-refresh-before-after.png -->
-        <img src="images/portfolio/bathroom-refresh-before-after.png" alt="Primary bathroom refresh, before and after">
-        <!-- Image file: images/portfolio/guest-bath-refresh-before-after.jpg -->
-        <img src="images/portfolio/guest-bath-refresh-before-after.jpg" alt="Budget guest bath refresh, before and after">
-        <div class="ba-extra">
-          <!-- Image file: images/portfolio/guest-bath-how-we-updated.jpg -->
-          <img src="images/portfolio/guest-bath-how-we-updated.jpg" alt="How we updated the guest bath on a budget">
-          <!-- Image file: images/portfolio/primary-bathroom-how-we-updated.jpg -->
-          <img src="images/portfolio/primary-bathroom-how-we-updated.jpg" alt="How we updated the bathroom on a budget">
-        </div>
-      </div>
+          <!-- Bathroom refreshes (primary + guest) -->
+          <div class="ba-group">
+            <!-- Image file: images/portfolio/bathroom-refresh-before-after.png -->
+            <img
+              src="images/portfolio/bathroom-refresh-before-after.png"
+              alt="Primary bathroom refresh, before and after"
+            />
+            <!-- Image file: images/portfolio/guest-bath-refresh-before-after.jpg -->
+            <img
+              src="images/portfolio/guest-bath-refresh-before-after.jpg"
+              alt="Budget guest bath refresh, before and after"
+            />
+            <div class="ba-extra">
+              <!-- Image file: images/portfolio/guest-bath-how-we-updated.jpg -->
+              <img
+                src="images/portfolio/guest-bath-how-we-updated.jpg"
+                alt="How we updated the guest bath on a budget"
+              />
+              <!-- Image file: images/portfolio/primary-bathroom-how-we-updated.jpg -->
+              <img
+                src="images/portfolio/primary-bathroom-how-we-updated.jpg"
+                alt="How we updated the bathroom on a budget"
+              />
+            </div>
+          </div>
 
-      <!-- Living room refresh: living-room-refresh-before.jpg is the "before" half,
+          <!-- Living room refresh: living-room-refresh-before.jpg is the "before" half,
            living-room-dining-after.jpg is the "after" half, and
            living-room-how-we-updated.jpg is the "how we updated it" checklist. -->
-      <div class="ba-group">
-        <!-- Image file: images/portfolio/living-room-refresh-before.jpg -->
-        <img src="images/portfolio/living-room-refresh-before.jpg" alt="Living room refresh, before">
-        <!-- Image file: images/portfolio/living-room-dining-after.jpg -->
-        <img src="images/portfolio/living-room-dining-after.jpg" alt="Living room and dining area, after refresh">
-        <div class="ba-extra">
-          <!-- Image file: images/portfolio/living-room-how-we-updated.jpg -->
-          <img src="images/portfolio/living-room-how-we-updated.jpg" alt="How we updated the living room on a budget">
-        </div>
-      </div>
+          <div class="ba-group">
+            <!-- Image file: images/portfolio/living-room-refresh-before.jpg -->
+            <img
+              src="images/portfolio/living-room-refresh-before.jpg"
+              alt="Living room refresh, before"
+            />
+            <!-- Image file: images/portfolio/living-room-dining-after.jpg -->
+            <img
+              src="images/portfolio/living-room-dining-after.jpg"
+              alt="Living room and dining area, after refresh"
+            />
+            <div class="ba-extra">
+              <!-- Image file: images/portfolio/living-room-how-we-updated.jpg -->
+              <img
+                src="images/portfolio/living-room-how-we-updated.jpg"
+                alt="How we updated the living room on a budget"
+              />
+            </div>
+          </div>
 
-      <!-- Coffee bar (wet bar): placed last here, on purpose, so it leads
+          <!-- Coffee bar (wet bar): placed last here, on purpose, so it leads
            straight into the fireplace wall and laundry room refreshes at
            the top of the Photo Gallery below - the client wants those
            three to read in that order (wet bar, then feature wall +
            fireplace, then laundry room). -->
-      <div class="ba-group">
-        <!-- Image file: images/portfolio/coffee-bar-transformation.jpg -->
-        <img src="images/portfolio/coffee-bar-transformation.jpg" alt="Coffee bar smart space transformation, before and after">
-        <div class="ba-extra">
-          <!-- Image file: images/portfolio/coffee-bar-how-we-updated.jpg -->
-          <img src="images/portfolio/coffee-bar-how-we-updated.jpg" alt="How we improved the coffee bar space">
+          <div class="ba-group">
+            <!-- Image file: images/portfolio/coffee-bar-transformation.jpg -->
+            <img
+              src="images/portfolio/coffee-bar-transformation.jpg"
+              alt="Coffee bar smart space transformation, before and after"
+            />
+            <div class="ba-extra">
+              <!-- Image file: images/portfolio/coffee-bar-how-we-updated.jpg -->
+              <img
+                src="images/portfolio/coffee-bar-how-we-updated.jpg"
+                alt="How we improved the coffee bar space"
+              />
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
-
-<!--
+    <!--
 PHOTO GALLERY
 
 One project per row: the finished room photo on one side, the client's
@@ -232,86 +314,160 @@ illegible thumbnail. To add a project: copy one "project-row" block and
 update its two image src=""/alt="" values. For a photo with no matching
 checklist card, use "project-row-solo" instead (see the last row).
 -->
-<section id="gallery">
-  <div class="container">
-    <div class="section-intro">
-      <p class="eyebrow">Photo Gallery</p>
-      <h2>More From Our Projects</h2>
-    </div>
-    <div class="project-rows">
-
-      <!-- Feature wall + fireplace, then laundry room: placed first here
+    <section id="gallery">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Photo Gallery</p>
+          <h2>More From Our Projects</h2>
+        </div>
+        <div class="project-rows">
+          <!-- Feature wall + fireplace, then laundry room: placed first here
            so they read right after the wet bar (coffee bar) at the end
            of the Before & After Highlights section above, per the
            client's requested order. -->
-      <div class="project-row project-row-solo">
-        <img src="images/portfolio/river-mist-fireplace-wall.jpg" alt="River Mist fireplace wall revamp">
+          <div class="project-row project-row-solo">
+            <img
+              src="images/portfolio/river-mist-fireplace-wall.jpg"
+              alt="River Mist fireplace wall revamp"
+            />
+          </div>
+
+          <div class="project-row project-row-solo">
+            <img
+              src="images/portfolio/river-mist-laundry-room.jpg"
+              alt="River Mist laundry room redo"
+            />
+          </div>
+
+          <div class="project-row">
+            <img
+              src="images/portfolio/rm-master-bedroom.jpg"
+              alt="River Mist primary bedroom refresh"
+            />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/rm-master-bedroom-how-we-updated.jpg"
+                alt="How we updated the River Mist primary bedroom on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img
+              src="images/portfolio/rm-guest-bedroom.jpg"
+              alt="River Mist guest bedroom refresh"
+            />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/rm-guest-bedroom-how-we-updated.jpg"
+                alt="How we updated the River Mist guest bedroom on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img src="images/portfolio/mustique-bunk-room.jpg" alt="Mustique bunk room refresh" />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/mustique-bunk-room-how-we-updated.jpg"
+                alt="How we updated the Mustique bunk room on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img src="images/portfolio/ct-guest-bedroom.jpg" alt="CT guest bedroom refresh" />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/ct-guest-bedroom-how-we-updated.jpg"
+                alt="How we updated the CT guest bedroom on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img src="images/portfolio/ct-master-bedroom.jpg" alt="CT primary bedroom refresh" />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/ct-master-bedroom-how-we-updated.jpg"
+                alt="How we updated the CT primary bedroom on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img
+              src="images/portfolio/mustique-living-room.jpg"
+              alt="Mustique living room refresh"
+            />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/mustique-living-room-how-we-updated.jpg"
+                alt="How we updated the Mustique living room on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img
+              src="images/portfolio/island-tower-tv-cabinet.jpg"
+              alt="Island Tower custom TV cabinet"
+            />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/island-tower-tv-cabinet-how-we-updated.jpg"
+                alt="How we updated the Island Tower TV cabinet on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img src="images/portfolio/ct-dining-table.jpg" alt="CT dining table refresh" />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/ct-dining-table-how-we-updated.jpg"
+                alt="How we updated the CT dining table on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img
+              src="images/portfolio/mustique-master-bath.jpg"
+              alt="Mustique primary bathroom refresh"
+            />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/mustique-master-bath-how-we-updated.jpg"
+                alt="How we updated the Mustique primary bathroom on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img src="images/portfolio/it-guest-bath.jpg" alt="IT guest bathroom refresh" />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/it-guest-bath-how-we-updated.jpg"
+                alt="How we updated the IT guest bathroom on a budget"
+              />
+            </div>
+          </div>
+
+          <div class="project-row">
+            <img src="images/portfolio/ct-master-bath.jpg" alt="CT primary bathroom refresh" />
+            <div class="project-row-card">
+              <img
+                src="images/portfolio/ct-master-bath-how-we-updated.jpg"
+                alt="How we updated the CT primary bathroom on a budget"
+              />
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="project-row project-row-solo">
-        <img src="images/portfolio/river-mist-laundry-room.jpg" alt="River Mist laundry room redo">
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/rm-master-bedroom.jpg" alt="River Mist primary bedroom refresh">
-        <div class="project-row-card"><img src="images/portfolio/rm-master-bedroom-how-we-updated.jpg" alt="How we updated the River Mist primary bedroom on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/rm-guest-bedroom.jpg" alt="River Mist guest bedroom refresh">
-        <div class="project-row-card"><img src="images/portfolio/rm-guest-bedroom-how-we-updated.jpg" alt="How we updated the River Mist guest bedroom on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/mustique-bunk-room.jpg" alt="Mustique bunk room refresh">
-        <div class="project-row-card"><img src="images/portfolio/mustique-bunk-room-how-we-updated.jpg" alt="How we updated the Mustique bunk room on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/ct-guest-bedroom.jpg" alt="CT guest bedroom refresh">
-        <div class="project-row-card"><img src="images/portfolio/ct-guest-bedroom-how-we-updated.jpg" alt="How we updated the CT guest bedroom on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/ct-master-bedroom.jpg" alt="CT primary bedroom refresh">
-        <div class="project-row-card"><img src="images/portfolio/ct-master-bedroom-how-we-updated.jpg" alt="How we updated the CT primary bedroom on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/mustique-living-room.jpg" alt="Mustique living room refresh">
-        <div class="project-row-card"><img src="images/portfolio/mustique-living-room-how-we-updated.jpg" alt="How we updated the Mustique living room on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/island-tower-tv-cabinet.jpg" alt="Island Tower custom TV cabinet">
-        <div class="project-row-card"><img src="images/portfolio/island-tower-tv-cabinet-how-we-updated.jpg" alt="How we updated the Island Tower TV cabinet on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/ct-dining-table.jpg" alt="CT dining table refresh">
-        <div class="project-row-card"><img src="images/portfolio/ct-dining-table-how-we-updated.jpg" alt="How we updated the CT dining table on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/mustique-master-bath.jpg" alt="Mustique primary bathroom refresh">
-        <div class="project-row-card"><img src="images/portfolio/mustique-master-bath-how-we-updated.jpg" alt="How we updated the Mustique primary bathroom on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/it-guest-bath.jpg" alt="IT guest bathroom refresh">
-        <div class="project-row-card"><img src="images/portfolio/it-guest-bath-how-we-updated.jpg" alt="How we updated the IT guest bathroom on a budget"></div>
-      </div>
-
-      <div class="project-row">
-        <img src="images/portfolio/ct-master-bath.jpg" alt="CT primary bathroom refresh">
-        <div class="project-row-card"><img src="images/portfolio/ct-master-bath-how-we-updated.jpg" alt="How we updated the CT primary bathroom on a budget"></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!--
+    <!--
 GUEST REVIEWS
 
 The client originally published this as two separate cropped image
@@ -327,77 +483,109 @@ instead - same real reviews, just editable and legible at any size.
 
 Image file: images/portfolio/guest-reviews.jpg
 -->
-<section class="section-alt" id="reviews">
-  <div class="container">
-    <!-- Shown on normal/desktop screens -->
-    <img src="images/portfolio/guest-reviews.jpg" class="reviews-image" alt="What Our Guests Are Saying. Real reviews from guests who stayed in properties we refreshed, furnished and decorated. Five-star reviews from Dianna O., Chris C., Paw Paw MI, Janet A., Stacy A. and Casey W.">
+    <section class="section-alt" id="reviews">
+      <div class="container">
+        <!-- Shown on normal/desktop screens -->
+        <img
+          src="images/portfolio/guest-reviews.png"
+          class="reviews-image"
+          alt="What Our Guests Are Saying. Real reviews from guests who stayed in properties we refreshed, furnished and decorated. Five-star reviews from Dianna O., Chris C., Paw Paw MI, Janet A., Stacy A. and Casey W."
+        />
 
-    <!-- Shown on narrow mobile screens only -->
-    <div class="reviews-cards">
-      <div class="section-intro">
-        <p class="eyebrow">Guest Feedback</p>
-        <h2>What Our Guests Are Saying</h2>
-        <p class="text-muted">Real reviews from guests who stayed in properties we refreshed, furnished and decorated.</p>
+        <!-- Shown on narrow mobile screens only -->
+        <div class="reviews-cards">
+          <div class="section-intro">
+            <p class="eyebrow">Guest Feedback</p>
+            <h2>What Our Guests Are Saying</h2>
+            <p class="text-muted">
+              Real reviews from guests who stayed in properties we refreshed, furnished and
+              decorated.
+            </p>
+          </div>
+          <div class="reviews-grid">
+            <div class="review-card">
+              <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p class="review-quote">
+                &ldquo;This is the most beautiful condo I've ever seen.&rdquo;
+              </p>
+              <p class="text-muted">
+                Extremely clean, well stocked and beautifully decorated. The views are breathtaking.
+              </p>
+              <p class="review-author">&mdash; Dianna O.</p>
+            </div>
+            <div class="review-card">
+              <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p class="review-quote">
+                &ldquo;My favorite property in 12 years of coming to Gulf Shores.&rdquo;
+              </p>
+              <p class="text-muted">
+                No complaints on layout or furnishings. The views were magnificent.
+              </p>
+              <p class="review-author">&mdash; Chris C.</p>
+            </div>
+            <div class="review-card">
+              <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p class="review-quote">
+                &ldquo;I walked into this amazing condo and it gave me goosebumps.&rdquo;
+              </p>
+              <p class="text-muted">
+                The condo itself made all of us jump for joy. It was so clean, well stocked and
+                decorated to perfection.
+              </p>
+              <p class="review-author">&mdash; Paw Paw MI</p>
+            </div>
+            <div class="review-card">
+              <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p class="review-quote">
+                &ldquo;By far our favorite condo that we have stayed in.&rdquo;
+              </p>
+              <p class="text-muted">Fantastic view and a really well-kept condo. We loved it!</p>
+              <p class="review-author">&mdash; Janet A.</p>
+            </div>
+            <div class="review-card">
+              <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p class="review-quote">
+                &ldquo;Perfect beach condo &mdash; beautiful and calming without being overdone or
+                kitschy.&rdquo;
+              </p>
+              <p class="text-muted">
+                One of the nicest we've seen. Well appointed and well decorated.
+              </p>
+              <p class="review-author">&mdash; Stacy A.</p>
+            </div>
+            <div class="review-card">
+              <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p class="review-quote">&ldquo;Best one we have rented.&rdquo;</p>
+              <p class="text-muted">
+                Property was as advertised and pictures were accurate. Whole experience was great
+                &mdash; will book again and recommend.
+              </p>
+              <p class="review-author">&mdash; Casey W.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-          <p class="review-quote">&ldquo;This is the most beautiful condo I've ever seen.&rdquo;</p>
-          <p class="text-muted">Extremely clean, well stocked and beautifully decorated. The views are breathtaking.</p>
-          <p class="review-author">&mdash; Dianna O.</p>
-        </div>
-        <div class="review-card">
-          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-          <p class="review-quote">&ldquo;My favorite property in 12 years of coming to Gulf Shores.&rdquo;</p>
-          <p class="text-muted">No complaints on layout or furnishings. The views were magnificent.</p>
-          <p class="review-author">&mdash; Chris C.</p>
-        </div>
-        <div class="review-card">
-          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-          <p class="review-quote">&ldquo;I walked into this amazing condo and it gave me goosebumps.&rdquo;</p>
-          <p class="text-muted">The condo itself made all of us jump for joy. It was so clean, well stocked and decorated to perfection.</p>
-          <p class="review-author">&mdash; Paw Paw MI</p>
-        </div>
-        <div class="review-card">
-          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-          <p class="review-quote">&ldquo;By far our favorite condo that we have stayed in.&rdquo;</p>
-          <p class="text-muted">Fantastic view and a really well-kept condo. We loved it!</p>
-          <p class="review-author">&mdash; Janet A.</p>
-        </div>
-        <div class="review-card">
-          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-          <p class="review-quote">&ldquo;Perfect beach condo &mdash; beautiful and calming without being overdone or kitschy.&rdquo;</p>
-          <p class="text-muted">One of the nicest we've seen. Well appointed and well decorated.</p>
-          <p class="review-author">&mdash; Stacy A.</p>
-        </div>
-        <div class="review-card">
-          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-          <p class="review-quote">&ldquo;Best one we have rented.&rdquo;</p>
-          <p class="text-muted">Property was as advertised and pictures were accurate. Whole experience was great &mdash; will book again and recommend.</p>
-          <p class="review-author">&mdash; Casey W.</p>
-        </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container text-center">
+        <h2>Ready to Start Your Refresh?</h2>
+        <p class="text-muted">
+          Tell us about your property and we'll help you plan an affordable update.
+        </p>
+        <a href="index.html#contact" class="button">Get in Touch</a>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section-alt">
-  <div class="container text-center">
-    <h2>Ready to Start Your Refresh?</h2>
-    <p class="text-muted">Tell us about your property and we'll help you plan an affordable update.</p>
-    <a href="index.html#contact" class="button">Get in Touch</a>
-  </div>
-</section>
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="images/branding/favicon.png" alt="" />
+        <span>Going Coastal Refresh Co.</span>
+      </div>
+      <p class="footer-locations">Gulf Shores, Orange Beach, Fort Morgan, Alabama</p>
+      <p class="footer-copyright">&copy; 2026 Going Coastal Refresh Co. All rights reserved.</p>
+    </footer>
 
-<footer class="site-footer">
-  <div class="footer-brand">
-    <img src="images/branding/favicon.png" alt="">
-    <span>Going Coastal Refresh Co.</span>
-  </div>
-  <p class="footer-locations">Gulf Shores, Orange Beach, Fort Morgan, Alabama</p>
-  <p class="footer-copyright">&copy; 2026 Going Coastal Refresh Co. All rights reserved.</p>
-</footer>
-
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

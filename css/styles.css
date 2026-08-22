@@ -98,7 +98,12 @@ a {
    TYPOGRAPHY
    ========================================================================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--color-text);
@@ -106,9 +111,15 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.6em;
 }
 
-h1 { font-size: clamp(2rem, 4vw, 3rem); }
-h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
-h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+}
+h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+}
 
 p {
   margin: 0 0 1em;
@@ -151,7 +162,9 @@ p {
   background-color: var(--color-primary);
   color: var(--color-text-on-primary);
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .button:hover {

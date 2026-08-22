@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { selector: ".portfolio-card", stagger: true },
     { selector: ".ba-group", stagger: true },
     { selector: ".project-row", stagger: true },
+    { selector: ".review-card", stagger: true },
     { selector: ".about-layout > *", stagger: true },
     { selector: ".contact-layout > *", stagger: true },
     { selector: ".testimonial-original, .testimonial-layout", blur: true },
