@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Going Coastal Refresh Co. | Gulf Shores, Orange Beach &amp; Fort Morgan, AL</title>
 <meta name="description" content="Going Coastal Refresh Co. helps Gulf Shores, Orange Beach and Fort Morgan property owners refresh and update their beach homes and condos without the expense and disruption of a full renovation.">
-<link rel="icon" href="images/branding/logo-badge.png">
+<link rel="icon" href="images/branding/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -37,9 +40,14 @@ HOME PAGE HERO
 
 To change this headline, edit the text inside the <h1> below.
 To change the intro paragraph, edit the text inside the <p class="hero-lede">.
+The round logo graphic above the headline is the client's full logo badge,
+cropped to a transparent circle (images/branding/logo-badge-circle.png,
+made from images/branding/logo-badge.png), shown here the same way it
+appears at the top of the client's original site.
 -->
 <section class="hero">
   <div class="container">
+    <img class="hero-logo" src="images/branding/logo-badge-circle.png" alt="Going Coastal Refresh Co. logo">
     <h1>A Fresh Look Without a Full Renovation.</h1>
     <p class="hero-lede">
       Going Coastal Refresh Co. helps Gulf Shores, Orange Beach and Fort Morgan
@@ -52,7 +60,7 @@ To change the intro paragraph, edit the text inside the <p class="hero-lede">.
       is to make your space feel fresh, inviting and coastal &mdash; while
       keeping your budget in mind.
     </p>
-    <p class="hero-tagline">Refresh &bull; Repurpose &bull; Reimagine</p>
+    <p class="hero-tagline"><span>Refresh</span><span>Repurpose</span><span>Reimagine</span></p>
   </div>
 </section>
 
@@ -60,8 +68,8 @@ To change the intro paragraph, edit the text inside the <p class="hero-lede">.
 SERVICES SECTION
 
 Each of the 3 boxes below is one service. To change a service name or
-description, edit the <h3> and <p> inside that box. For full pricing and
-booking details, see services.html.
+description, edit the <h3> and <p> inside that box. For more service
+details, see services.html.
 -->
 <section id="services">
   <div class="container">
@@ -143,17 +151,46 @@ images/general/about-dave-donna-penny.png
 <!--
 TESTIMONIAL
 
-Real testimonial the client already published from a local Realtor.
-To change or remove it, edit or delete the image below.
+Real testimonial from a local Realtor the client already works with (not
+a past customer of Going Coastal Refresh Co. itself, but a trusted
+referral partner who has bought/sold/repositioned properties with them).
 
-Image file:
+On normal (desktop/tablet) screens, this shows the client's original full
+graphic, unedited, exactly as they designed it:
 images/general/testimonial-rachel-wallace.png
+
+Only on narrow mobile screens does it switch to the cropped photo + real
+text version below (testimonial-layout), since the full graphic doesn't
+fit a phone screen without shrinking its text to be unreadable.
 -->
 <section class="section-alt testimonial">
   <div class="container">
-    <p class="eyebrow">Client Spotlight</p>
-    <h2>What Our Favorite Gulf Shores Realtor Says</h2>
-    <img src="images/general/testimonial-rachel-wallace.png" alt="Testimonial from Rachel Wallace of The Beach to Bay Group, RE/MAX on the Coast: The right updates don't just refresh a condo, they reposition it.">
+    <div class="section-intro">
+      <p class="eyebrow">Realtor Testimonial</p>
+      <h2>What Our Favorite Gulf Shores Realtor Says</h2>
+    </div>
+
+    <!-- Shown on normal/desktop screens -->
+    <div class="testimonial-original">
+      <img src="images/general/testimonial-rachel-wallace.png" alt="Testimonial from Rachel Wallace of The Beach to Bay Group, RE/MAX on the Coast: The right updates don't just refresh a condo, they reposition it.">
+    </div>
+
+    <!-- Shown on narrow mobile screens only -->
+    <div class="testimonial-layout">
+      <div class="testimonial-photo">
+        <img src="images/general/testimonial-rachel-wallace-photo-mobile.jpg" alt="Rachel Wallace and Ian Wallace of The Beach to Bay Group, RE/MAX on the Coast">
+      </div>
+      <div class="testimonial-content">
+        <p class="testimonial-name">Rachel Wallace</p>
+        <p class="text-muted testimonial-title">THE BEACH TO BAY GROUP &nbsp;|&nbsp; RE/MAX ON THE COAST</p>
+        <p>Rachel has been alongside us for multiple Gulf Shores real estate transactions &mdash; helping us buy, sell, refresh and reposition properties. She has seen firsthand the difference thoughtful updates can make.</p>
+        <blockquote>Anyone can own a condo. But the owners who win are the ones who update with strategy.</blockquote>
+        <p>Rachel has seen those results firsthand. At Island Tower, strategic updates helped secure the <strong>highest sale in the building's history</strong>. At Crystal Tower, those improvements helped push the market forward and create a <strong>new standard for value</strong>.</p>
+        <blockquote>Strategic improvements don't just boost aesthetics. They boost rental income, buyer demand, speed to contract, and ultimately the sales price.</blockquote>
+        <p class="testimonial-closing">&ldquo;The right updates don't just refresh a condo &mdash; they reposition it.&rdquo;</p>
+        <p class="text-muted">&mdash; Rachel Wallace, The Beach to Bay Group, RE/MAX on the Coast</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -218,7 +255,10 @@ Repeated on every page. To change the copyright year or locations text,
 edit them below.
 -->
 <footer class="site-footer">
-  <img src="images/branding/logo.png" alt="Going Coastal Refresh Co. logo">
+  <div class="footer-brand">
+    <img src="images/branding/favicon.png" alt="">
+    <span>Going Coastal Refresh Co.</span>
+  </div>
   <p class="footer-locations">Gulf Shores, Orange Beach, Fort Morgan, Alabama</p>
   <p class="footer-copyright">&copy; 2026 Going Coastal Refresh Co. All rights reserved.</p>
 </footer>

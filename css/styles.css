@@ -26,8 +26,9 @@
 
   /* Page background color (warm off-white/cream). */
   --color-background: #f8f5f2;
-  /* Slightly darker cream used for alternating section backgrounds and cards. */
-  --color-surface: #efe9e3;
+  /* Slightly darker cream used for alternating section backgrounds and cards
+     (matches the client's live site card color exactly). */
+  --color-surface: #e4dfd9;
   /* Card/box borders and dividing lines. */
   --color-border: #c6c1ba;
 
@@ -38,12 +39,15 @@
   /* Text color used on top of the dark/primary color buttons. */
   --color-text-on-primary: #f8f5f2;
 
-  /* Fonts. The original site used a licensed Wix font ("Madefor"); we use
-     the system's own Helvetica/Arial (the same fallback the Wix theme
-     itself specified) so the site never depends on downloading a font
-     file, keeping pages fast and simple. */
-  --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Fonts. The client's live site uses two licensed fonts ("Ogg" for
+     headings, "Neue Haas Grotesk" for body text). Those aren't available
+     as free web fonts, so this rebuild uses the closest free Google Fonts
+     match for each: "Fraunces" (an elegant, warm serif similar to Ogg) for
+     headings, and "Inter" (a clean, neutral sans-serif similar to Neue
+     Haas Grotesk/Helvetica) for body text. Loaded via <link> tags in each
+     page's <head>. */
+  --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* Shared spacing / sizing helpers */
   --max-width: 1160px;
@@ -111,7 +115,7 @@ p {
 }
 
 .eyebrow {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -136,7 +140,7 @@ p {
 
 .button {
   display: inline-block;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
@@ -205,7 +209,7 @@ p {
 }
 
 .main-nav a {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.95rem;
   text-decoration: none;
@@ -250,12 +254,47 @@ p {
 }
 
 .hero-tagline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 1.5rem;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: var(--color-accent-coral);
+  color: var(--color-primary);
   font-size: 0.95rem;
+}
+
+/* Each word is its own span, and the "•" separator is glued to the front
+   of the word that follows it (not the end of the word before it). That
+   way, if this wraps onto a second line on a narrow screen, the bullet
+   always travels down with "Reimagine" instead of being stranded at the
+   end of the first line. */
+.hero-tagline span + span::before {
+  content: "\2022";
+  display: inline-block;
+  margin: 0 0.6em;
+}
+
+@media (max-width: 420px) {
+  .hero-tagline {
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+  }
+
+  .hero-tagline span + span::before {
+    margin: 0 0.4em;
+  }
+}
+
+/* The client's round logo badge, shown above the headline (matches how
+   it appears at the top of the client's original homepage). Background
+   outside the circle has been made transparent. */
+.hero-logo {
+  height: 220px;
+  width: 220px;
+  margin: 0 auto 1.5rem;
+  display: block;
 }
 
 /* ==========================================================================
@@ -282,7 +321,7 @@ section {
 }
 
 .service-card {
-  background-color: var(--color-background);
+  background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 2rem 1.75rem;
@@ -296,17 +335,9 @@ section {
 .service-card img {
   border-radius: var(--radius);
   margin-bottom: 1rem;
-  height: 200px;
   width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-}
-
-.service-card .price {
-  display: inline-block;
-  margin-top: 1rem;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-primary);
 }
 
 /* ==========================================================================
@@ -328,42 +359,104 @@ section {
 }
 
 /* ==========================================================================
-   PHOTO GALLERY
+   BEFORE & AFTER GROUPS
+
+   Each project (before/after photo(s) + its "how we updated it" card(s))
+   gets its own bordered card, so it's obvious at a glance where one
+   project ends and the next begins — instead of a flat grid where
+   unrelated projects could visually blur together.
    ========================================================================== */
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
+.ba-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   margin-top: 2rem;
 }
 
-.gallery-grid figure {
-  margin: 0;
-  overflow: hidden;
+.ba-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-background);
+  padding: 1.5rem;
+}
+
+.ba-group > img {
+  width: 100%;
+  display: block;
+}
+
+/* No radius on individual images within a group — rounding every image's
+   corners made a single project look like several separate stacked
+   cards. The group's own border/radius is the only visual boundary. */
+.ba-group > img + img {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--color-border);
+}
+
+.ba-extra {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ba-extra img {
+  width: 100%;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   PROJECT ROWS (finished photo + its "how we updated it" card)
+
+   One project per row, full width, so nothing gets cropped down to an
+   illegible thumbnail and it's obvious which photo goes with which card.
+   ========================================================================== */
+
+.project-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
   background-color: var(--color-background);
 }
 
-.gallery-grid img {
+.project-row.project-row-solo {
+  grid-template-columns: 1fr;
+}
+
+.project-row img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.gallery-grid .gallery-feature {
-  grid-column: span 2;
+.project-row-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.gallery-grid .gallery-feature img {
+.project-row .project-row-card img {
   height: auto;
   object-fit: contain;
 }
 
-@media (max-width: 640px) {
-  .gallery-grid .gallery-feature {
-    grid-column: span 1;
+@media (max-width: 720px) {
+  .project-row {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -387,7 +480,7 @@ section {
 
 .portfolio-card img {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
@@ -429,11 +522,115 @@ section {
   text-align: center;
 }
 
-.testimonial img {
+.testimonial .section-intro {
+  margin-bottom: 2.5rem;
+}
+
+/* Normal/desktop screens: the client's original full graphic, shown
+   exactly as designed (same as the site's other "designed graphic"
+   sections like the intro pitch and storage-bed info block). */
+.testimonial-original img {
   margin: 0 auto;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
-  max-width: 900px;
+  max-width: min(900px, 100%);
+}
+
+/* Mobile-only cropped-photo + real-text version (hidden on normal
+   screens; shown by the max-width: 720px override below). */
+.testimonial-layout {
+  display: none;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2.5rem;
+  align-items: center;
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.testimonial-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.15em;
+}
+
+.testimonial-title {
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25em;
+}
+
+.testimonial-content blockquote {
+  position: relative;
+  margin: 1.25em 0;
+  padding: 0.9em 1.25em 0.9em 3rem;
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-background);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.testimonial-content blockquote::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.1em;
+  left: 0.7rem;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+  opacity: 0.5;
+}
+
+.testimonial-closing {
+  margin-top: 1.5em;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 720px) {
+  /* Below this width, hide the full designed graphic (its text becomes
+     unreadable at phone width) and switch to the cropped photo + real
+     text version instead, so nothing overflows the screen. */
+  .testimonial-original {
+    display: none;
+  }
+
+  .testimonial-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-photo img {
+    aspect-ratio: 4 / 5;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   GUEST REVIEWS
+   ========================================================================== */
+
+.reviews-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 700px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
 }
 
 /* ==========================================================================
@@ -524,10 +721,31 @@ section {
   text-align: center;
 }
 
-.site-footer img {
-  height: 36px;
-  margin: 0 auto 1rem;
-  filter: brightness(0) invert(1);
+/* The full logo.png wordmark doesn't work here: its dark navy text and
+   dark teal wave nearly disappear against this dark background, and
+   forcing it white with a filter turns the wave's separate color bands
+   into one flat white blob (they're all opaque, so brightness(0) can't
+   tell them apart). Instead, the footer uses just the wave icon (already
+   in color, on a transparent background) next to real text set in a
+   light color. */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand img {
+  height: 40px;
+  width: 40px;
+}
+
+.footer-brand span {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-background);
 }
 
 .site-footer a {
@@ -576,5 +794,55 @@ section {
 
   .main-nav li {
     padding: 0.6rem 0;
+  }
+}
+
+/* ==========================================================================
+   SCROLL-REVEAL ANIMATION
+
+   Recreates the soft fade-in (and, on some headings, a blur-to-sharp
+   effect) the client's original Wix site used as sections load or come
+   into view. js/main.js adds "reveal-init" to the elements below, then
+   adds "reveal-visible" once they're on screen (or, for the hero, a
+   moment after the page loads) to trigger the transition.
+
+   Nothing here hides content on its own — only JavaScript adds these
+   classes, so if a visitor has JavaScript off, everything simply shows
+   up normally with no animation.
+   ========================================================================== */
+
+.reveal-init {
+  opacity: 0;
+  transition:
+    opacity 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+    filter 0.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.reveal-init.reveal-blur {
+  filter: blur(8px);
+}
+
+.reveal-init.reveal-visible {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.reveal-init.reveal-delay-1 {
+  transition-delay: 0.08s;
+}
+
+.reveal-init.reveal-delay-2 {
+  transition-delay: 0.18s;
+}
+
+.reveal-init.reveal-delay-3 {
+  transition-delay: 0.28s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
   }
 }

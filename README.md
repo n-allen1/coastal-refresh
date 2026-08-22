@@ -72,11 +72,15 @@ exactly as-is:
   photos. These were combined into a single `portfolio.html` with clear
   sections ("Featured Projects," "Before & After Highlights," and
   "Photo Gallery") so there's one page to maintain instead of two.
-- **Fonts.** The Wix theme used a licensed font ("Madefor Display" for
-  headings, "Madefor Text" for body copy) whose own fallback in Wix's
-  own CSS was Helvetica Neue. This rebuild uses the system's built-in
-  Helvetica/Arial directly — visually very close, and it means the site
-  never has to download a font file to load correctly.
+- **Fonts.** The client's live site actually renders with two licensed
+  fonts ("Ogg" for headings, "Neue Haas Grotesk" for body text), not the
+  Madefor/Helvetica fallback that shows up in Wix's own CSS. Since Ogg and
+  Neue Haas Grotesk aren't available as free web fonts, this rebuild loads
+  the closest free Google Fonts match for each instead: "Fraunces" (an
+  elegant serif similar to Ogg) for headings, and "Inter" (a clean,
+  neutral sans-serif similar to Neue Haas Grotesk) for body text. Both are
+  loaded via a `<link>` tag in each page's `<head>` and set in
+  `css/styles.css`'s `--font-heading` / `--font-body` variables.
 - **Colors** were reconstructed from the Wix theme's own CSS color
   variables (found in the site's page source), not re-guessed from
   scratch — see `css/styles.css` for the exact values.

@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio | Going Coastal Refresh Co.</title>
 <meta name="description" content="See before-and-after photos of the beach homes and condos Going Coastal Refresh Co. has updated across Gulf Shores, Orange Beach and Fort Morgan, Alabama.">
-<link rel="icon" href="images/branding/logo-badge.png">
+<link rel="icon" href="images/branding/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -117,8 +120,16 @@ src="" value.
 BEFORE & AFTER HIGHLIGHTS
 
 These are the client's own designed before/after graphics. They already
-contain their own headings and captions, so they are shown as full images
-rather than retyped text.
+contain their own headings and captions, so they are shown as full
+images (never cropped) rather than retyped text.
+
+Each project gets its own bordered card ("ba-group") so it's visually
+obvious which images belong together, instead of relying on a flat grid
+where unrelated projects could end up looking connected just because
+they land next to each other. To add a project, copy one "ba-group"
+block. The first image(s) inside are the before/after photo(s); anything
+inside "ba-extra" is a supporting "how we updated it" checklist card for
+that same project.
 -->
 <section class="section-alt" id="before-after">
   <div class="container">
@@ -126,19 +137,62 @@ rather than retyped text.
       <p class="eyebrow">Before &amp; After</p>
       <h2>Small Changes, Big Impact</h2>
     </div>
-    <div class="gallery-grid">
-      <!-- Image file: images/portfolio/bedroom-refresh-before-after.png -->
-      <figure class="gallery-feature">
+    <div class="ba-groups">
+
+      <!-- Sleigh bed bedroom -->
+      <div class="ba-group">
+        <!-- Image file: images/portfolio/bedroom-refresh-before-after.png -->
         <img src="images/portfolio/bedroom-refresh-before-after.png" alt="Sleigh bed bedroom refresh, before and after">
-      </figure>
-      <!-- Image file: images/portfolio/bathroom-refresh-before-after.png -->
-      <figure class="gallery-feature">
+        <div class="ba-extra">
+          <!-- Image file: images/portfolio/sleigh-bed-bedroom-how-we-updated.jpg -->
+          <img src="images/portfolio/sleigh-bed-bedroom-how-we-updated.jpg" alt="How we updated the sleigh bed bedroom on a budget">
+        </div>
+      </div>
+
+      <!-- Bathroom refreshes (primary + guest) -->
+      <div class="ba-group">
+        <!-- Image file: images/portfolio/bathroom-refresh-before-after.png -->
         <img src="images/portfolio/bathroom-refresh-before-after.png" alt="Primary bathroom refresh, before and after">
-      </figure>
-      <!-- Image file: images/portfolio/coffee-bar-transformation.jpg -->
-      <figure class="gallery-feature">
+        <!-- Image file: images/portfolio/guest-bath-refresh-before-after.jpg -->
+        <img src="images/portfolio/guest-bath-refresh-before-after.jpg" alt="Budget guest bath refresh, before and after">
+        <div class="ba-extra">
+          <!-- Image file: images/portfolio/guest-bath-how-we-updated.jpg -->
+          <img src="images/portfolio/guest-bath-how-we-updated.jpg" alt="How we updated the guest bath on a budget">
+          <!-- Image file: images/portfolio/primary-bathroom-how-we-updated.jpg -->
+          <img src="images/portfolio/primary-bathroom-how-we-updated.jpg" alt="How we updated the bathroom on a budget">
+        </div>
+      </div>
+
+      <!-- Living room refresh: living-room-refresh-before.jpg is the "before" half,
+           living-room-dining-after.jpg is the "after" half, and
+           living-room-how-we-updated.jpg is the "how we updated it" checklist. -->
+      <div class="ba-group">
+        <!-- Image file: images/portfolio/living-room-refresh-before.jpg -->
+        <img src="images/portfolio/living-room-refresh-before.jpg" alt="Living room refresh, before">
+        <!-- Image file: images/portfolio/living-room-dining-after.jpg -->
+        <img src="images/portfolio/living-room-dining-after.jpg" alt="Living room and dining area, after refresh">
+        <div class="ba-extra">
+          <!-- Image file: images/portfolio/living-room-how-we-updated.jpg -->
+          <img src="images/portfolio/living-room-how-we-updated.jpg" alt="How we updated the living room on a budget">
+        </div>
+      </div>
+
+      <!-- Coffee bar -->
+      <div class="ba-group">
+        <!-- Image file: images/portfolio/coffee-bar-transformation.jpg -->
         <img src="images/portfolio/coffee-bar-transformation.jpg" alt="Coffee bar smart space transformation, before and after">
-      </figure>
+        <div class="ba-extra">
+          <!-- Image file: images/portfolio/coffee-bar-how-we-updated.jpg -->
+          <img src="images/portfolio/coffee-bar-how-we-updated.jpg" alt="How we improved the coffee bar space">
+        </div>
+      </div>
+
+      <!-- Custom storage beds (no separate checklist card) -->
+      <div class="ba-group">
+        <!-- Image file: images/portfolio/storage-beds-before-after.jpg -->
+        <img src="images/portfolio/storage-beds-before-after.jpg" alt="Custom storage beds, before and after, king queen and twin bunks">
+      </div>
+
     </div>
   </div>
 </section>
@@ -146,10 +200,12 @@ rather than retyped text.
 <!--
 PHOTO GALLERY
 
-Additional project photos, in the same order the client had them on the
-original site. To add a new photo: add the image file to images/portfolio/
-and copy one of the <figure> blocks below, updating its src="" and alt="".
-To remove a photo, delete its <figure> block.
+One project per row: the finished room photo on one side, the client's
+own "How We Updated It" checklist card (uncropped) on the other, so it's
+obvious which card goes with which photo and nothing shrinks down to an
+illegible thumbnail. To add a project: copy one "project-row" block and
+update its two image src=""/alt="" values. For a photo with no matching
+checklist card, use "project-row-solo" instead (see the last row).
 -->
 <section id="gallery">
   <div class="container">
@@ -157,43 +213,89 @@ To remove a photo, delete its <figure> block.
       <p class="eyebrow">Photo Gallery</p>
       <h2>More From Our Projects</h2>
     </div>
-    <div class="gallery-grid">
-      <figure><img src="images/portfolio/gallery-01.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/rm-master-bedroom.jpg" alt="River Mist primary bedroom refresh"></figure>
-      <figure><img src="images/portfolio/gallery-02.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/rm-guest-bedroom.jpg" alt="River Mist guest bedroom refresh"></figure>
-      <figure><img src="images/portfolio/gallery-03.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/mustique-bunk-room.jpg" alt="Mustique bunk room refresh"></figure>
-      <figure><img src="images/portfolio/gallery-04.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/ct-guest-bedroom.jpg" alt="CT guest bedroom refresh"></figure>
-      <figure><img src="images/portfolio/gallery-05.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/ct-master-bedroom.jpg" alt="CT primary bedroom refresh"></figure>
-      <figure><img src="images/portfolio/gallery-06.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/mustique-living-room.jpg" alt="Mustique living room refresh"></figure>
-      <figure><img src="images/portfolio/gallery-07.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/island-tower-tv-cabinet.jpg" alt="Island Tower custom TV cabinet"></figure>
-      <figure><img src="images/portfolio/gallery-08.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/ct-dining-table.jpg" alt="CT dining table refresh"></figure>
-      <figure><img src="images/portfolio/gallery-09.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/gallery-10.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/gallery-11.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/gallery-12.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/mustique-master-bath.jpg" alt="Mustique primary bathroom refresh"></figure>
-      <figure><img src="images/portfolio/gallery-13.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/gallery-14.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/ct-master-bath.jpg" alt="CT primary bathroom refresh"></figure>
-      <figure><img src="images/portfolio/gallery-15.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/gallery-16.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/gallery-17.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/it-guest-bath.jpg" alt="IT guest bathroom refresh"></figure>
-      <figure><img src="images/portfolio/gallery-18.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/gallery-19.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/river-mist-fireplace-wall.jpg" alt="River Mist fireplace wall revamp"></figure>
-      <figure><img src="images/portfolio/river-mist-laundry-room.jpg" alt="River Mist laundry room redo"></figure>
-      <figure><img src="images/portfolio/gallery-20.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/gallery-21.jpg" alt="Refresh project photo"></figure>
-      <figure><img src="images/portfolio/gallery-22.jpg" alt="Refresh project photo"></figure>
+    <div class="project-rows">
+
+      <div class="project-row">
+        <img src="images/portfolio/rm-master-bedroom.jpg" alt="River Mist primary bedroom refresh">
+        <div class="project-row-card"><img src="images/portfolio/rm-master-bedroom-how-we-updated.jpg" alt="How we updated the River Mist primary bedroom on a budget"></div>
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/rm-guest-bedroom.jpg" alt="River Mist guest bedroom refresh">
+        <div class="project-row-card"><img src="images/portfolio/rm-guest-bedroom-how-we-updated.jpg" alt="How we updated the River Mist guest bedroom on a budget"></div>
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/mustique-bunk-room.jpg" alt="Mustique bunk room refresh">
+        <div class="project-row-card"><img src="images/portfolio/mustique-bunk-room-how-we-updated.jpg" alt="How we updated the Mustique bunk room on a budget"></div>
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/ct-guest-bedroom.jpg" alt="CT guest bedroom refresh">
+        <div class="project-row-card"><img src="images/portfolio/ct-guest-bedroom-how-we-updated.jpg" alt="How we updated the CT guest bedroom on a budget"></div>
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/ct-master-bedroom.jpg" alt="CT primary bedroom refresh">
+        <div class="project-row-card"><img src="images/portfolio/ct-master-bedroom-how-we-updated.jpg" alt="How we updated the CT primary bedroom on a budget"></div>
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/mustique-living-room.jpg" alt="Mustique living room refresh">
+        <div class="project-row-card"><img src="images/portfolio/mustique-living-room-how-we-updated.jpg" alt="How we updated the Mustique living room on a budget"></div>
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/island-tower-tv-cabinet.jpg" alt="Island Tower custom TV cabinet">
+        <div class="project-row-card"><img src="images/portfolio/island-tower-tv-cabinet-how-we-updated.jpg" alt="How we updated the Island Tower TV cabinet on a budget"></div>
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/ct-dining-table.jpg" alt="CT dining table refresh">
+        <div class="project-row-card"><img src="images/portfolio/ct-dining-table-how-we-updated.jpg" alt="How we updated the CT dining table on a budget"></div>
+      </div>
+
+      <div class="project-row project-row-solo">
+        <img src="images/portfolio/river-mist-fireplace-wall.jpg" alt="River Mist fireplace wall revamp">
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/mustique-master-bath.jpg" alt="Mustique primary bathroom refresh">
+        <div class="project-row-card"><img src="images/portfolio/mustique-master-bath-how-we-updated.jpg" alt="How we updated the Mustique primary bathroom on a budget"></div>
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/it-guest-bath.jpg" alt="IT guest bathroom refresh">
+        <div class="project-row-card"><img src="images/portfolio/it-guest-bath-how-we-updated.jpg" alt="How we updated the IT guest bathroom on a budget"></div>
+      </div>
+
+      <div class="project-row">
+        <img src="images/portfolio/ct-master-bath.jpg" alt="CT primary bathroom refresh">
+        <div class="project-row-card"><img src="images/portfolio/ct-master-bath-how-we-updated.jpg" alt="How we updated the CT primary bathroom on a budget"></div>
+      </div>
+
+      <div class="project-row project-row-solo">
+        <img src="images/portfolio/river-mist-laundry-room.jpg" alt="River Mist laundry room redo">
+      </div>
+
     </div>
+  </div>
+</section>
+
+<!--
+GUEST REVIEWS
+
+The client originally published this as two separate cropped image
+exports (from the same design) that had gotten separated during the
+site rebuild. They've been recombined into one image here, shown full
+width and uncropped like the other client-designed graphics on this
+page.
+
+Image file: images/portfolio/guest-reviews.jpg
+-->
+<section class="section-alt" id="reviews">
+  <div class="container">
+    <img src="images/portfolio/guest-reviews.jpg" class="reviews-image" alt="What Our Guests Are Saying. Real reviews from guests who stayed in properties we refreshed, furnished and decorated. Five-star reviews from Dianna O., Chris C., Paw Paw MI, Janet A., Stacy A. and Casey W.">
   </div>
 </section>
 
@@ -206,7 +308,10 @@ To remove a photo, delete its <figure> block.
 </section>
 
 <footer class="site-footer">
-  <img src="images/branding/logo.png" alt="Going Coastal Refresh Co. logo">
+  <div class="footer-brand">
+    <img src="images/branding/favicon.png" alt="">
+    <span>Going Coastal Refresh Co.</span>
+  </div>
   <p class="footer-locations">Gulf Shores, Orange Beach, Fort Morgan, Alabama</p>
   <p class="footer-copyright">&copy; 2026 Going Coastal Refresh Co. All rights reserved.</p>
 </footer>
