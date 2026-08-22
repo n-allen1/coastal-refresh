@@ -625,12 +625,68 @@ section {
    GUEST REVIEWS
    ========================================================================== */
 
+/* Normal/desktop screens: the client's combined reviews graphic, full
+   width and uncropped. */
 .reviews-image {
   display: block;
+  width: 100%;
   margin: 0 auto;
   max-width: 700px;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
+}
+
+/* Mobile-only reviews cards (hidden on normal screens below). The
+   combined graphic's text becomes unreadably small - and was
+   overflowing the screen - at phone widths, so mobile gets the same
+   reviews as real, legible text instead. */
+.reviews-cards {
+  display: none;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.review-card {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+}
+
+.review-stars {
+  color: var(--color-accent-sand);
+  letter-spacing: 0.15em;
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+}
+
+.review-quote {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+}
+
+.review-author {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .reviews-image {
+    display: none;
+  }
+
+  .reviews-cards {
+    display: block;
+  }
 }
 
 /* ==========================================================================

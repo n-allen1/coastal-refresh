@@ -291,11 +291,64 @@ site rebuild. They've been recombined into one image here, shown full
 width and uncropped like the other client-designed graphics on this
 page.
 
+That combined image is wide enough that its text becomes unreadably
+small (and was overflowing the screen) on narrow phones, so on mobile
+this switches to the same reviews transcribed as plain text cards
+instead - same real reviews, just editable and legible at any size.
+
 Image file: images/portfolio/guest-reviews.jpg
 -->
 <section class="section-alt" id="reviews">
   <div class="container">
+    <!-- Shown on normal/desktop screens -->
     <img src="images/portfolio/guest-reviews.jpg" class="reviews-image" alt="What Our Guests Are Saying. Real reviews from guests who stayed in properties we refreshed, furnished and decorated. Five-star reviews from Dianna O., Chris C., Paw Paw MI, Janet A., Stacy A. and Casey W.">
+
+    <!-- Shown on narrow mobile screens only -->
+    <div class="reviews-cards">
+      <div class="section-intro">
+        <p class="eyebrow">Guest Feedback</p>
+        <h2>What Our Guests Are Saying</h2>
+        <p class="text-muted">Real reviews from guests who stayed in properties we refreshed, furnished and decorated.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="review-quote">&ldquo;This is the most beautiful condo I've ever seen.&rdquo;</p>
+          <p class="text-muted">Extremely clean, well stocked and beautifully decorated. The views are breathtaking.</p>
+          <p class="review-author">&mdash; Dianna O.</p>
+        </div>
+        <div class="review-card">
+          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="review-quote">&ldquo;My favorite property in 12 years of coming to Gulf Shores.&rdquo;</p>
+          <p class="text-muted">No complaints on layout or furnishings. The views were magnificent.</p>
+          <p class="review-author">&mdash; Chris C.</p>
+        </div>
+        <div class="review-card">
+          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="review-quote">&ldquo;I walked into this amazing condo and it gave me goosebumps.&rdquo;</p>
+          <p class="text-muted">The condo itself made all of us jump for joy. It was so clean, well stocked and decorated to perfection.</p>
+          <p class="review-author">&mdash; Paw Paw MI</p>
+        </div>
+        <div class="review-card">
+          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="review-quote">&ldquo;By far our favorite condo that we have stayed in.&rdquo;</p>
+          <p class="text-muted">Fantastic view and a really well-kept condo. We loved it!</p>
+          <p class="review-author">&mdash; Janet A.</p>
+        </div>
+        <div class="review-card">
+          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="review-quote">&ldquo;Perfect beach condo &mdash; beautiful and calming without being overdone or kitschy.&rdquo;</p>
+          <p class="text-muted">One of the nicest we've seen. Well appointed and well decorated.</p>
+          <p class="review-author">&mdash; Stacy A.</p>
+        </div>
+        <div class="review-card">
+          <p class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="review-quote">&ldquo;Best one we have rented.&rdquo;</p>
+          <p class="text-muted">Property was as advertised and pictures were accurate. Whole experience was great &mdash; will book again and recommend.</p>
+          <p class="review-author">&mdash; Casey W.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
