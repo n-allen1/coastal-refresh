@@ -49,6 +49,20 @@ is one project. To edit a project's description, change the text inside
 its <p>. To swap a project's photo, replace the image file listed above
 each card while keeping the same filename, or change the filename in the
 src="" value.
+
+IMAGE SIZE FOR THESE CARDS: each photo fills a box that's roughly
+4:3 (for example 800x600px, or any size in that same ratio). See
+"RECENT TRANSFORMATIONS CARDS" in css/styles.css for the exact rule.
+A photo of a different shape will get cropped to fit - center content
+you don't want cut off, and keep the top-left corner clear if you want
+to add a "before"/"after" label like the ones here.
+
+Four of these six images (Coastal Condo Refresh, Bathroom Renovation,
+Rental Property Prep, Realtor Listing Refresh) are custom-cropped
+close-ups of the client's wider before/after graphics, made specifically
+to fit this card size without cutting off the "before"/"after" labels -
+they aren't used anywhere else on the site, so they're safe to replace
+or re-crop without affecting other pages.
 -->
 <section id="featured-projects">
   <div class="container">
@@ -149,6 +163,19 @@ that same project.
         </div>
       </div>
 
+      <!-- Custom storage beds: grouped with the bedroom project above
+           (storage beds are a bedroom feature) per the client's category
+           order - bedroom items together, then bathroom items together,
+           then everything else. The client's original site also showed
+           this "extra storage" info graphic right before the storage
+           beds before/after example, so that pairing is kept too. -->
+      <div class="ba-group">
+        <!-- Image file: images/portfolio/custom-storage-beds-info.png -->
+        <img src="images/portfolio/custom-storage-beds-info.png" alt="Are you in need of extra storage for your beach property? Lift-up storage beds can provide a surprising amount of hidden space, customizable for king, queen and twin beds including bunk rooms, with an option to lock for owner-only storage.">
+        <!-- Image file: images/portfolio/storage-beds-before-after.jpg -->
+        <img src="images/portfolio/storage-beds-before-after.jpg" alt="Custom storage beds, before and after, king queen and twin bunks">
+      </div>
+
       <!-- Bathroom refreshes (primary + guest) -->
       <div class="ba-group">
         <!-- Image file: images/portfolio/bathroom-refresh-before-after.png -->
@@ -177,7 +204,11 @@ that same project.
         </div>
       </div>
 
-      <!-- Coffee bar -->
+      <!-- Coffee bar (wet bar): placed last here, on purpose, so it leads
+           straight into the fireplace wall and laundry room refreshes at
+           the top of the Photo Gallery below - the client wants those
+           three to read in that order (wet bar, then feature wall +
+           fireplace, then laundry room). -->
       <div class="ba-group">
         <!-- Image file: images/portfolio/coffee-bar-transformation.jpg -->
         <img src="images/portfolio/coffee-bar-transformation.jpg" alt="Coffee bar smart space transformation, before and after">
@@ -185,12 +216,6 @@ that same project.
           <!-- Image file: images/portfolio/coffee-bar-how-we-updated.jpg -->
           <img src="images/portfolio/coffee-bar-how-we-updated.jpg" alt="How we improved the coffee bar space">
         </div>
-      </div>
-
-      <!-- Custom storage beds (no separate checklist card) -->
-      <div class="ba-group">
-        <!-- Image file: images/portfolio/storage-beds-before-after.jpg -->
-        <img src="images/portfolio/storage-beds-before-after.jpg" alt="Custom storage beds, before and after, king queen and twin bunks">
       </div>
 
     </div>
@@ -214,6 +239,18 @@ checklist card, use "project-row-solo" instead (see the last row).
       <h2>More From Our Projects</h2>
     </div>
     <div class="project-rows">
+
+      <!-- Feature wall + fireplace, then laundry room: placed first here
+           so they read right after the wet bar (coffee bar) at the end
+           of the Before & After Highlights section above, per the
+           client's requested order. -->
+      <div class="project-row project-row-solo">
+        <img src="images/portfolio/river-mist-fireplace-wall.jpg" alt="River Mist fireplace wall revamp">
+      </div>
+
+      <div class="project-row project-row-solo">
+        <img src="images/portfolio/river-mist-laundry-room.jpg" alt="River Mist laundry room redo">
+      </div>
 
       <div class="project-row">
         <img src="images/portfolio/rm-master-bedroom.jpg" alt="River Mist primary bedroom refresh">
@@ -255,10 +292,6 @@ checklist card, use "project-row-solo" instead (see the last row).
         <div class="project-row-card"><img src="images/portfolio/ct-dining-table-how-we-updated.jpg" alt="How we updated the CT dining table on a budget"></div>
       </div>
 
-      <div class="project-row project-row-solo">
-        <img src="images/portfolio/river-mist-fireplace-wall.jpg" alt="River Mist fireplace wall revamp">
-      </div>
-
       <div class="project-row">
         <img src="images/portfolio/mustique-master-bath.jpg" alt="Mustique primary bathroom refresh">
         <div class="project-row-card"><img src="images/portfolio/mustique-master-bath-how-we-updated.jpg" alt="How we updated the Mustique primary bathroom on a budget"></div>
@@ -272,10 +305,6 @@ checklist card, use "project-row-solo" instead (see the last row).
       <div class="project-row">
         <img src="images/portfolio/ct-master-bath.jpg" alt="CT primary bathroom refresh">
         <div class="project-row-card"><img src="images/portfolio/ct-master-bath-how-we-updated.jpg" alt="How we updated the CT primary bathroom on a budget"></div>
-      </div>
-
-      <div class="project-row project-row-solo">
-        <img src="images/portfolio/river-mist-laundry-room.jpg" alt="River Mist laundry room redo">
       </div>
 
     </div>
