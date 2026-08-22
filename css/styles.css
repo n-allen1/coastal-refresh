@@ -377,22 +377,27 @@ section {
 }
 
 /* ==========================================================================
-   BEFORE & AFTER GROUPS
+   PORTFOLIO FLYERS
 
-   Each project (before/after photo(s) + its "how we updated it" card(s))
-   gets its own bordered card, so it's obvious at a glance where one
-   project ends and the next begins — instead of a flat grid where
-   unrelated projects could visually blur together.
+   Each project is now a single client-designed marketing flyer that
+   already contains its own before/after photos, headline and captions,
+   so it's shown as one full image (never cropped) inside its own
+   bordered card, capped at a comfortable reading width - instead of
+   stretching edge to edge, which would blow tall/portrait flyers up
+   to an unreadable size on wide screens.
    ========================================================================== */
 
-.ba-groups {
+.flyer-groups {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.ba-group {
+.flyer-group {
+  width: 100%;
+  max-width: 760px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background-color: var(--color-background);
@@ -400,9 +405,8 @@ section {
 }
 
 /* No fixed box - the image is never cropped, it displays at its own
-   natural width/height (just scaled to fit the card). Any size works;
-   wide before/after composites (e.g. 1600x800px) are typical here. */
-.ba-group > img {
+   natural width/height (just scaled to fit the card). */
+.flyer-group img {
   width: 100%;
   display: block;
 }
@@ -410,115 +414,10 @@ section {
 /* No radius on individual images within a group — rounding every image's
    corners made a single project look like several separate stacked
    cards. The group's own border/radius is the only visual boundary. */
-.ba-group > img + img {
+.flyer-group img + img {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px dashed var(--color-border);
-}
-
-.ba-extra {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.ba-extra img {
-  width: 100%;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-border);
-}
-
-/* ==========================================================================
-   PROJECT ROWS (finished photo + its "how we updated it" card)
-
-   One project per row, full width, so nothing gets cropped down to an
-   illegible thumbnail and it's obvious which photo goes with which card.
-   ========================================================================== */
-
-.project-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.project-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background-color: var(--color-background);
-}
-
-.project-row.project-row-solo {
-  grid-template-columns: 1fr;
-}
-
-/* Recommended source size: roughly square to 4:3, e.g. 900x700px.
-   This photo sets the row's height, so a taller photo makes the row
-   (and its paired card on the right) taller too. */
-.project-row img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.project-row-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project-row .project-row-card img {
-  height: auto;
-  object-fit: contain;
-}
-
-@media (max-width: 720px) {
-  .project-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ==========================================================================
-   PORTFOLIO COLLECTIONS
-   ========================================================================== */
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.portfolio-card {
-  background-color: var(--color-background);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-/* RECENT TRANSFORMATIONS CARDS
-   Recommended source size: 4:3 ratio, e.g. 800x600px. A different
-   shape gets cropped to fit - keep the main subject (and any "before"/
-   "after" label) centered, away from the edges. */
-.portfolio-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.portfolio-card .portfolio-card-body {
-  padding: 1.5rem;
-}
-
-.portfolio-card h3 {
-  margin-bottom: 0.4em;
 }
 
 /* ==========================================================================
