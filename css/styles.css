@@ -705,7 +705,7 @@ section {
   text-align: center;
 }
 
-/* The full logo.png wordmark doesn't work here: its dark navy text and
+/* The full logo.webp wordmark doesn't work here: its dark navy text and
    dark teal wave nearly disappear against this dark background, and
    forcing it white with a filter turns the wave's separate color bands
    into one flat white blob (they're all opaque, so brightness(0) can't
