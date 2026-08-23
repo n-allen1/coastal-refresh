@@ -48,11 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
     { selector: ".service-card", stagger: true },
     { selector: ".flyer-group", stagger: true },
     { selector: ".review-card", stagger: true },
-    { selector: ".about-layout > *", stagger: true },
     { selector: ".contact-layout > *", stagger: true },
     { selector: ".testimonial-original, .testimonial-layout", blur: true },
     { selector: ".reviews-image", blur: true },
-    { selector: ".intro-graphic img", blur: true }
+    { selector: ".intro-graphic img, .about-graphic img", blur: true }
   ];
 
   var immediateEls = [];
