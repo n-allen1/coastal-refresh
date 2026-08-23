@@ -112,3 +112,6 @@ GitHub Pages (Settings → Pages → deploy from the `main` branch). The
 client's domain (`goingcoastalrefresh.com`) currently points at Wix; it
 would need to be repointed at GitHub Pages (or wherever this ends up
 hosted) once the client approves the new site.
+
+
+- Small test edit.
