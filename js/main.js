@@ -123,6 +123,29 @@ document.addEventListener("DOMContentLoaded", function () {
   var status = form.querySelector(".form-status");
   var submitButton = form.querySelector("button[type='submit']");
 
+  // Live-format the phone field as the visitor types, capping it at 10 US
+  // digits (an accidentally-typed leading "1" is dropped) so it always
+  // matches the field's XXX-XXX-XXXX pattern. The API re-normalizes this
+  // itself before emailing it, so this is just a typing convenience.
+  var phoneInput = form.querySelector("#phone");
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function () {
+      var digits = phoneInput.value.replace(/\D/g, "");
+      if (digits.length > 10 && digits.charAt(0) === "1") {
+        digits = digits.slice(1);
+      }
+      digits = digits.slice(0, 10);
+
+      if (digits.length > 6) {
+        phoneInput.value = digits.slice(0, 3) + "-" + digits.slice(3, 6) + "-" + digits.slice(6);
+      } else if (digits.length > 3) {
+        phoneInput.value = digits.slice(0, 3) + "-" + digits.slice(3);
+      } else {
+        phoneInput.value = digits;
+      }
+    });
+  }
+
   function showStatus(message, isError) {
     if (!status) {
       return;
