@@ -100,3 +100,93 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(el);
   });
 });
+
+/*
+  CONTACT FORM SUBMISSION
+
+  The form's action/method (see index.html) already work as a plain
+  HTML POST to /api/submit-inquiry, so the form still works with
+  JavaScript off. When JS is available, this intercepts the submit to
+  send it via fetch instead, so visitors get an inline success/error
+  message without leaving the page.
+
+  It also handles the ?sent=1 / ?sent=0 redirect the API sends back
+  for that plain-HTML fallback path, showing the same status message
+  after the page reloads.
+*/
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.querySelector(".contact-form");
+  if (!form) {
+    return;
+  }
+
+  var status = form.querySelector(".form-status");
+  var submitButton = form.querySelector("button[type='submit']");
+
+  function showStatus(message, isError) {
+    if (!status) {
+      return;
+    }
+    status.textContent = message;
+    status.classList.toggle("form-status-error", Boolean(isError));
+    status.classList.toggle("form-status-success", !isError);
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  if (params.has("sent")) {
+    showStatus(
+      params.get("sent") === "1"
+        ? "Thanks! Your message has been sent - we'll be in touch soon."
+        : "Something went wrong sending your message. Please email or call/text us directly.",
+      params.get("sent") !== "1"
+    );
+    params.delete("sent");
+    var cleanQuery = params.toString();
+    window.history.replaceState(
+      {},
+      "",
+      window.location.pathname + (cleanQuery ? "?" + cleanQuery : "") + window.location.hash
+    );
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var data = {
+      firstName: form.elements["firstName"].value,
+      lastName: form.elements["lastName"].value,
+      email: form.elements["email"].value,
+      phone: form.elements["phone"].value,
+      message: form.elements["message"].value,
+    };
+
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+    showStatus("Sending your message...", false);
+
+    fetch(form.action, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Request failed");
+        }
+        showStatus("Thanks! Your message has been sent - we'll be in touch soon.", false);
+        form.reset();
+      })
+      .catch(function () {
+        showStatus(
+          "Something went wrong sending your message. Please email or call/text us directly.",
+          true
+        );
+      })
+      .finally(function () {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+      });
+  });
+});

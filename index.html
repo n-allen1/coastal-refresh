@@ -242,9 +242,11 @@ fit a phone screen without shrinking its text to be unreadable.
 CONTACT SECTION
 
 To change the email, phone number or service area, edit the text inside
-"contact-details" below. The form does not connect to a server (this is
-a static site), so it currently opens the visitor's email app instead.
-See the README for options to connect it to a real form service.
+"contact-details" below. The form posts to the Azure Functions API at
+/api/submit-inquiry (see api/src/functions/submitInquiry.js), which
+emails the submission via SendGrid. js/main.js intercepts the submit
+to send it via fetch and show an inline status message; the form's
+action/method are a working fallback for visitors without JavaScript.
 -->
     <section id="contact">
       <div class="container">
@@ -262,41 +264,36 @@ See the README for options to connect it to a real form service.
               Call or Text: <a href="tel:+16307769537">(630) 776-9537</a>
             </p>
           </div>
-          <form
-            class="contact-form"
-            action="mailto:goingcoastalrefresh@gmail.com"
-            method="post"
-            enctype="text/plain"
-          >
+          <form class="contact-form" action="/api/submit-inquiry" method="post">
             <div class="form-row">
               <div>
                 <label for="first-name">First Name *</label>
-                <input type="text" id="first-name" name="First Name" required />
+                <input type="text" id="first-name" name="firstName" required />
               </div>
               <div>
                 <label for="last-name">Last Name *</label>
-                <input type="text" id="last-name" name="Last Name" required />
+                <input type="text" id="last-name" name="lastName" required />
               </div>
             </div>
             <div class="form-row">
               <div>
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="Email Address" required />
+                <input type="email" id="email" name="email" required />
               </div>
               <div>
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="Phone Number" />
+                <input type="tel" id="phone" name="phone" />
               </div>
             </div>
             <div>
               <label for="message">Message *</label>
-              <textarea id="message" name="Message" required></textarea>
+              <textarea id="message" name="message" required></textarea>
             </div>
             <button type="submit" class="button">Submit Inquiry</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
             <p class="form-note">
-              Submitting this form will open your email app to send your message to Going Coastal
-              Refresh Co. If that doesn't work on your device, please email or call/text us directly
-              using the details above.
+              Submitting this form sends your message directly to Going Coastal Refresh Co. If you
+              run into any trouble, please email or call/text us directly using the details above.
             </p>
           </form>
         </div>

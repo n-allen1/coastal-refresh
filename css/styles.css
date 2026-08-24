@@ -690,6 +690,23 @@ section {
   color: var(--color-text-muted);
 }
 
+.form-status {
+  font-weight: 700;
+  margin: 0;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status-success {
+  color: var(--color-primary);
+}
+
+.form-status-error {
+  color: var(--color-accent-coral);
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */

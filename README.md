@@ -12,7 +12,8 @@ index.html       Home page (hero, services, intro, about, testimonial, contact)
 portfolio.html   Featured projects, before/after highlights, and full photo gallery
 services.html    Service pricing/details (formerly the Wix "Book Online" page)
 css/styles.css   All styling and the color/typography variables
-js/main.js       Small script that opens/closes the mobile menu (nothing else)
+js/main.js       Mobile menu, scroll-reveal animations, and contact form submit handling
+api/             Azure Functions API (contact form → email via SendGrid)
 images/          All site images, organized by type (see below)
 ```
 
@@ -59,14 +60,13 @@ exactly as-is:
   already labeled this nav link "Services", even though the page URL
   was `/book-online`), and pricing/duration details are shown as plain
   text instead of inside a live booking widget.
-- **Contact form has no server to send to.** GitHub Pages (and static
-  hosting generally) cannot process form submissions. The form on the
-  Home page currently uses a `mailto:` action, which opens the visitor's
-  email app with the message pre-filled — it works, but isn't as
-  seamless as a hosted form. If/when this site moves off GitHub Pages,
-  consider wiring the form up to a free form backend such as Formspree,
-  Getform, or a Netlify Forms-enabled host, none of which require
-  rebuilding the page — just changing the `<form action="...">` value.
+- **Contact form posts to an Azure Functions API.** The Home page form
+  submits to `/api/submit-inquiry` (see `api/src/functions/submitInquiry.js`),
+  a managed Function that emails the submission via SendGrid. It works
+  as a plain HTML form POST even without JavaScript; `js/main.js`
+  additionally intercepts the submit to send it via `fetch` and show an
+  inline success/error message. See "Contact form email setup" below
+  for how to configure it.
 - **Two Wix pages merged into one.** Wix generated separate `/portfolio`
   and `/portfolio-gallery` pages that were both about the same project
   photos. These were combined into a single `portfolio.html` with clear
@@ -94,12 +94,12 @@ exactly as-is:
   branded graphics (the testimonial, the before/after marketing cards)
   were kept as images only, matching how the client already presented
   them.
-- **A few of the client's designed graphics are large PNG files**
-  (1–3 MB each, since they're screenshots/exports containing photos and
-  text). They load fine but could be compressed further with an image
-  tool if page-load speed on mobile becomes a concern — this wasn't
-  done here since no image-compression tool was available in this
-  environment.
+- **All images are WebP.** The client's designed graphics were originally
+  large PNG/JPG exports (1–3 MB each, since they're screenshots
+  containing photos and text). They've been converted to WebP (lossless
+  for the flat-color logo files, quality-85 lossy for the photographic
+  flyers/graphics) for roughly a 90% size reduction with no visible
+  quality loss — see git history for the one-off conversion script used.
 
 Nothing was invented: all service descriptions, pricing, the business
 story, the Realtor testimonial, and contact information are copied
@@ -107,11 +107,39 @@ directly from the live Wix site.
 
 ## Hosting
 
-This project is plain static files, so it can be hosted immediately on
-GitHub Pages (Settings → Pages → deploy from the `main` branch). The
-client's domain (`goingcoastalrefresh.com`) currently points at Wix; it
-would need to be repointed at GitHub Pages (or wherever this ends up
-hosted) once the client approves the new site.
+This project is deployed on **Azure Static Web Apps**, built straight
+from this GitHub repo (`main` branch) with no build step. In the Azure
+portal's "Build Details" when creating the resource: Build Preset
+`Custom`, App location `/`, **Api location `api`** (see below), Output
+location left blank. The client's domain (`goingcoastalrefresh.com`)
+currently points at Wix; it would need to be repointed at Azure once
+the client approves the new site (configured under the Static Web
+App's Custom domains blade, not via a repo `CNAME` file).
 
+## Contact form email setup
 
-- Small test edit.
+The contact form's `/api/submit-inquiry` endpoint (an Azure Functions
+"managed API", in `api/`) sends the submission as an email via
+[SendGrid](https://sendgrid.com). To make it work:
+
+1. Create a free SendGrid account and verify a **Single Sender**
+   identity (or a full domain) — this is the address the emails will
+   be sent *from*. SendGrid won't send on behalf of an unverified
+   address.
+2. Create a SendGrid API key (Settings → API Keys → Restricted Access,
+   with "Mail Send" permission).
+3. In the Azure Static Web App resource → **Configuration**, add these
+   Application Settings (never commit these to the repo):
+   - `SENDGRID_API_KEY` — the API key from step 2
+   - `CONTACT_FROM_EMAIL` — the verified sender address from step 1
+   - `CONTACT_TO_EMAIL` — where inquiries should land (defaults to
+     `goingcoastalrefresh@gmail.com` if not set)
+4. Push to `main` — the GitHub Actions workflow Azure created rebuilds
+   and redeploys both the site and the API automatically.
+
+For local testing, copy `api/local.settings.json.example` to
+`api/local.settings.json` (already gitignored) and fill in real values,
+then run the Static Web Apps CLI (`swa start` or `func start` from
+`api/`) — see the [Azure Static Web Apps local
+development docs](https://learn.microsoft.com/azure/static-web-apps/local-development)
+for the full setup.
